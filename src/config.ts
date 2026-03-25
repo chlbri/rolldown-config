@@ -1,5 +1,3 @@
-// import { globSync } from 'glob';
-// import { relative } from 'node:path';
 import { toArray } from '#utils';
 import { defineConfig as _defineConfig } from 'rolldown';
 import {
@@ -11,6 +9,7 @@ import { buildInput } from './input';
 import { buildOutput } from './output';
 import { PLUGIN_BUILDERS } from './plugins';
 import type { Config_F, Params } from './types';
+import path from 'node:path';
 
 export const defineConfig: Config_F = additionals => {
   return defineConfig.default(additionals);
@@ -94,6 +93,11 @@ defineConfig.default = ({
     plugins,
     external,
     output,
+    transform: {
+      inject: {
+        require: path.resolve('./require.js'),
+      },
+    },
   });
 };
 

@@ -40,6 +40,12 @@ MIT
 ...
 </summary>
 
+### Version [0.1.1] --> _25/03/2026 10:06_
+
+- Exigence Node.js portée de `>=22` à `>=24`
+- Ajoute `require.js` : polyfill CJS `require()` injecté automatiquement
+- Corrige l'URL du dépôt dans `package.json`
+
 ### Version [0.1.0] --> _24/03/2026 20:25_
 
 - Migre de `@bemedev/rollup-config` (rollup) vers

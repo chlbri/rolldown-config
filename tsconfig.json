@@ -25,5 +25,5 @@
       "#utils": ["./src/utils.ts"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "require.js"]
 }

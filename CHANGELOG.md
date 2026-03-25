@@ -1,23 +1,8 @@
 ## CHANGELOG
 
-<details>
-<summary>
+## CHANGE_LOG
 
-## **[0.1.0] - 24/03/2026** => _20:25_
-
-</summary>
-
-- Migre de `@bemedev/rollup-config` (rollup) vers
-  `@bemedev/rolldown-config` (rolldown)
-- Ajoute la configuration de base pour Rolldown via `defineConfig`
-- Expose les variantes `defineConfig.default` et `defineConfig.bemedev`
-- Intègre les plugins : `alias`, `typescript`, `tsPaths`, `circulars`,
-  `externals`, `clean`
-- Supporte les paramètres : `circularDeps`, `excludesTS`, `ignoresJS`,
-  `externals`, `dir`, `sourcemap`, `declarationMap`, `plugins`
-- Requiert Node.js >= 22
-
-</details>
+Read [CHANGE_LOG.md](CHANGE_LOG.md) for more details about the changes.
 
 <br/>
 
