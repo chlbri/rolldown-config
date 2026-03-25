@@ -40,6 +40,12 @@ MIT
 ...
 </summary>
 
+### Version [0.1.2] --> _25/03/2026 10:24_
+
+- Add `platform: 'node'` to rolldown build config
+- Update `vitest` from `^3.2.4` to `^4.1.1`
+- Update `@vitest/coverage-v8` and `@vitest/ui` to `4.1.1`
+
 ### Version [0.1.1] --> _25/03/2026 10:06_
 
 - Exigence Node.js portée de `>=22` à `>=24`

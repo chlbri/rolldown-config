@@ -1,5 +1,55 @@
 ## CHANGELOG
 
+<details>
+<summary>
+
+## **[0.1.2] - 2026/03/25** => _10:24_
+
+</summary>
+
+- Add `platform: 'node'` to rolldown build config
+- Update `vitest` from `^3.2.4` to `^4.1.1`
+- Update `@vitest/coverage-v8` and `@vitest/ui` to `4.1.1`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
+## **[0.1.1] - 2026/03/25** => _10:06_
+
+</summary>
+
+- Fix repository URL in `package.json` (`rollup-config` → `rolldown-config`)
+- Add `require.js` : CJS `require()` polyfill auto-injected via `transform.inject`
+- Bump Node.js engine requirement from `>=22` to `>=24`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
+## **[0.1.0] - 2026/03/24** => _20:25_
+
+</summary>
+
+- Migrate from `@bemedev/rollup-config` (rollup) to `@bemedev/rolldown-config` (rolldown)
+- Add base rolldown config via `defineConfig`
+- Expose `defineConfig.default` and `defineConfig.bemedev` variants
+- Integrate plugins : `alias`, `typescript`, `tsPaths`, `circulars`, `externals`, `clean`
+- Support params : `circularDeps`, `excludesTS`, `ignoresJS`, `externals`, `dir`, `sourcemap`, `declarationMap`, `plugins`
+- Requires Node.js >= 22
+
+</details>
+
+<br/>
+
 ## CHANGE_LOG
 
 Read [CHANGE_LOG.md](CHANGE_LOG.md) for more details about the changes.

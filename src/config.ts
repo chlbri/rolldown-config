@@ -98,6 +98,7 @@ defineConfig.default = ({
         require: path.resolve('./require.js'),
       },
     },
+    platform: 'node',
   });
 };
 
