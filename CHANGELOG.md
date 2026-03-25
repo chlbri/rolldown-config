@@ -3,6 +3,27 @@
 <details>
 <summary>
 
+## **[0.1.3] - 2026/03/25** => _11:45_
+
+</summary>
+
+- Fix `typescript` plugin : remplace `ts.sys.fileExists` par `existsSync` (node:fs) pour éviter `require("fs")` interdit en ESM
+- Fix `readTsConfig` : extrait dans `typescript.config.ts` avec un `ParseConfigHost` personnalisé basé sur `node:fs` sans `ts.sys`
+- Add `useRebuild` dans les fixtures de tests pour tester la lib buildée via import dynamique
+- Add fichiers de tests `*.built.test.ts` : `default`, `declarationMap`, `notOmitAFile`, `omitAFile`
+- Add constante `IS_EXTENSION` dans `src/__tests__/constants.ts`
+- Add script `build-tests pre/post` dans `pretest`/`posttest`
+- Add dépendance `@bemedev/build-tests@^0.1.2`
+- Add `typescript@^6.0.2` dans `peerDependencies`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.1.2] - 2026/03/25** => _10:24_
 
 </summary>
@@ -23,8 +44,10 @@
 
 </summary>
 
-- Fix repository URL in `package.json` (`rollup-config` → `rolldown-config`)
-- Add `require.js` : CJS `require()` polyfill auto-injected via `transform.inject`
+- Fix repository URL in `package.json` (`rollup-config` →
+  `rolldown-config`)
+- Add `require.js` : CJS `require()` polyfill auto-injected via
+  `transform.inject`
 - Bump Node.js engine requirement from `>=22` to `>=24`
 - <u>Test coverage **_100%_**</u>
 
@@ -39,11 +62,14 @@
 
 </summary>
 
-- Migrate from `@bemedev/rollup-config` (rollup) to `@bemedev/rolldown-config` (rolldown)
+- Migrate from `@bemedev/rollup-config` (rollup) to
+  `@bemedev/rolldown-config` (rolldown)
 - Add base rolldown config via `defineConfig`
 - Expose `defineConfig.default` and `defineConfig.bemedev` variants
-- Integrate plugins : `alias`, `typescript`, `tsPaths`, `circulars`, `externals`, `clean`
-- Support params : `circularDeps`, `excludesTS`, `ignoresJS`, `externals`, `dir`, `sourcemap`, `declarationMap`, `plugins`
+- Integrate plugins : `alias`, `typescript`, `tsPaths`, `circulars`,
+  `externals`, `clean`
+- Support params : `circularDeps`, `excludesTS`, `ignoresJS`, `externals`,
+  `dir`, `sourcemap`, `declarationMap`, `plugins`
 - Requires Node.js >= 22
 
 </details>

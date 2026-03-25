@@ -2,6 +2,8 @@ import type { RolldownPluginOption } from 'rolldown';
 import ts from 'typescript';
 import { DEFAULT_DIR } from '../constants';
 import { toArray } from '#utils';
+import { readTsConfig } from './typescript.config';
+import { existsSync } from 'node:fs';
 
 type Props = {
   exclude?: string | string[];
@@ -29,27 +31,24 @@ export const typescript = ({
       order: 'pre',
       handler() {
         if (done) return;
-
         const cwd = process.cwd();
+
         const tsconfigPath = ts.findConfigFile(
           cwd,
-          ts.sys.fileExists,
+          existsSync,
           'tsconfig.json',
         )!;
 
-        const configFile = ts.readConfigFile(
-          tsconfigPath,
-          ts.sys.readFile,
-        );
+        const configFile = readTsConfig(tsconfigPath);
         const host = ts.createCompilerHost({});
 
         const parsed = ts.parseJsonConfigFileContent(
           {
-            ...configFile.config,
+            ...configFile,
             include,
             exclude: [...toArray(exclude), '*.ts'],
             compilerOptions: {
-              ...configFile.config.compilerOptions,
+              ...configFile.options,
               rootDir: './src',
               outDir: DEFAULT_DIR,
               noEmit: false,
@@ -67,6 +66,7 @@ export const typescript = ({
           parsed.options,
           // host,
         );
+
         const emitResult = program.emit();
 
         const errors = ts

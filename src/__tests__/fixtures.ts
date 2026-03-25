@@ -2,6 +2,8 @@ import { existsSync, writeFileSync } from 'node:fs';
 import { rm } from 'node:fs/promises';
 import { rolldown, type RolldownOptions } from 'rolldown';
 import { toArray } from '../utils';
+import { this1 } from '@bemedev/build-tests/constants';
+import type { Params } from '../types';
 
 export const WAITER = 100_000;
 
@@ -93,4 +95,26 @@ export const useTests = (options: Options) => {
   };
 
   return out;
+};
+
+export const useRebuild = (additionals?: Params | undefined) => {
+  let writeCjs: ReturnType<typeof useBundle>['writeCjs'];
+  let writeEsm: ReturnType<typeof useBundle>['writeEsm'];
+
+  beforeAll(async () => {
+    const bemedev = await import(this1).then(
+      ({ defineConfig }) => defineConfig.bemedev,
+    );
+    const bundle = useBundle(bemedev(additionals));
+    writeCjs = bundle.writeCjs;
+    writeEsm = bundle.writeEsm;
+  });
+
+  const testEsm = () => [() => writeEsm[0](), WAITER] as const;
+  const testCjs = () => [() => writeCjs[0](), WAITER] as const;
+
+  return {
+    testEsm,
+    testCjs,
+  };
 };
