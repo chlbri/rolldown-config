@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/rolldown-config",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A simple config for rolldown",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -109,7 +109,7 @@
     "oxlint": "^1.57.0",
     "prettier": "^3.8.1",
     "pretty-quick": "^4.2.2",
-    "rolldown": "1.0.0-rc.11",
+    "rolldown": "1.0.0-rc.12",
     "shelljs": "^0.10.0",
     "size-limit": "^12.0.1",
     "tsc-alias": "^1.8.16",

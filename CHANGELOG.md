@@ -3,6 +3,20 @@
 <details>
 <summary>
 
+## **[0.2.2] - 2026/03/25** => _16:00_
+
+</summary>
+
+- Update `rolldown` de `1.0.0-rc.11` à `1.0.0-rc.12` dans `devDependencies`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.2.1] - 2026/03/25** => _15:30_
 
 </summary>
