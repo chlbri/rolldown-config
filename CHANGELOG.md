@@ -3,14 +3,39 @@
 <details>
 <summary>
 
+## **[0.2.1] - 2026/03/25** => _15:30_
+
+</summary>
+
+- Remove `.prettierignore`, `.prettierrc.yml` : migration de Prettier vers
+  oxfmt
+- Remove `eslint.config.mjs` : migration de ESLint vers oxlint
+- Add `oxfmt.config.ts` : configuration du formateur oxfmt (remplace
+  Prettier)
+- Add `oxlint.config.ts` : configuration du linter oxlint (remplace ESLint)
+- Update scripts `lint`, `fmt`, `fmt:check` pour utiliser oxfmt/oxlint
+- Update `devDependencies` : ajout `oxfmt@^0.42.0` et `oxlint@^1.57.0`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.1.3] - 2026/03/25** => _11:45_
 
 </summary>
 
-- Fix `typescript` plugin : remplace `ts.sys.fileExists` par `existsSync` (node:fs) pour éviter `require("fs")` interdit en ESM
-- Fix `readTsConfig` : extrait dans `typescript.config.ts` avec un `ParseConfigHost` personnalisé basé sur `node:fs` sans `ts.sys`
-- Add `useRebuild` dans les fixtures de tests pour tester la lib buildée via import dynamique
-- Add fichiers de tests `*.built.test.ts` : `default`, `declarationMap`, `notOmitAFile`, `omitAFile`
+- Fix `typescript` plugin : remplace `ts.sys.fileExists` par `existsSync`
+  (node:fs) pour éviter `require("fs")` interdit en ESM
+- Fix `readTsConfig` : extrait dans `typescript.config.ts` avec un
+  `ParseConfigHost` personnalisé basé sur `node:fs` sans `ts.sys`
+- Add `useRebuild` dans les fixtures de tests pour tester la lib buildée
+  via import dynamique
+- Add fichiers de tests `*.built.test.ts` : `default`, `declarationMap`,
+  `notOmitAFile`, `omitAFile`
 - Add constante `IS_EXTENSION` dans `src/__tests__/constants.ts`
 - Add script `build-tests pre/post` dans `pretest`/`posttest`
 - Add dépendance `@bemedev/build-tests@^0.1.2`
