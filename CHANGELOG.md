@@ -3,6 +3,24 @@
 <details>
 <summary>
 
+## **[0.4.2] - 2026/03/26** => _03:13_
+
+</summary>
+
+- Add re-export de `RolldownOptions` depuis `src/types.ts` (fix portabilité des types pour les consommateurs)
+- Refactor `interface Config_F` → `type Config_F`
+- Refactor suppression de l'import inutilisé `import {} from 'rolldown/config'`
+- Refactor style : guillemets simples → doubles, paramètres fléchés entre parenthèses
+- Add `rollup-plugin-typescript2` dans `devDependencies`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.4.1] - 2026/03/26** => _02:40_
 
 </summary>

@@ -1,9 +1,9 @@
-import { toArray } from '#utils';
-import { existsSync } from 'node:fs';
-import type { RolldownPluginOption } from 'rolldown';
-import { replaceTscAliasPaths } from 'tsc-alias';
-import ts from 'typescript';
-import { readTsConfig } from './typescript.config';
+import { toArray } from "#utils";
+import { existsSync } from "node:fs";
+import type { RolldownPluginOption } from "rolldown";
+import { replaceTscAliasPaths } from "tsc-alias";
+import ts from "typescript";
+import { readTsConfig } from "./typescript.config";
 
 type Props = {
   exclude?: string | string[];
@@ -21,16 +21,16 @@ export const typescript = ({
   let done = false;
 
   return {
-    name: 'bemedev-dts',
+    name: "bemedev-dts",
     options(opts) {
       const existing = toArray(opts.external).filter(
-        v => typeof v === 'string' || v instanceof RegExp,
+        (v) => typeof v === "string" || v instanceof RegExp,
       );
-      opts.external = [...existing, 'source-map-support'];
+      opts.external = [...existing, "source-map-support"];
       return opts;
     },
     closeBundle: {
-      order: 'pre',
+      order: "pre",
       async handler() {
         if (done) return;
         const cwd = process.cwd();
@@ -38,7 +38,7 @@ export const typescript = ({
         const tsconfigPath = ts.findConfigFile(
           cwd,
           existsSync,
-          'tsconfig.json',
+          "tsconfig.json",
         )!;
 
         const configFile = readTsConfig(tsconfigPath);
@@ -48,7 +48,7 @@ export const typescript = ({
           {
             ...configFile,
             include,
-            exclude: [...toArray(exclude), '*.ts'],
+            exclude: [...toArray(exclude), "*.ts"],
             compilerOptions: {
               ...configFile.options,
               outDir,
@@ -73,12 +73,10 @@ export const typescript = ({
         const errors = ts
           .getPreEmitDiagnostics(program)
           .concat(emitResult.diagnostics)
-          .filter(d => d.category === ts.DiagnosticCategory.Error);
+          .filter((d) => d.category === ts.DiagnosticCategory.Error);
 
         if (errors.length > 0) {
-          console.error(
-            ts.formatDiagnosticsWithColorAndContext(errors, host),
-          );
+          console.error(ts.formatDiagnosticsWithColorAndContext(errors, host));
         }
 
         await replaceTscAliasPaths({
@@ -87,7 +85,7 @@ export const typescript = ({
         });
 
         done = true;
-        console.log('DTS generation complete');
+        console.log("DTS generation complete");
       },
     },
   };

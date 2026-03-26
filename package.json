@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/rolldown-config",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A simple config for rolldown",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -117,8 +117,8 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "rolldown": "1.0.0-rc.12",
     "glob": "^13.0.6",
+    "rolldown": "1.0.0-rc.12",
     "typescript": "^6.0.2"
   },
   "dependencies": {
