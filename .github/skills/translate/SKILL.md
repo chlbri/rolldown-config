@@ -1,4 +1,20 @@
 ---
+title: Translate Text Files with Contextual Awareness
+description:
+  A skill for translating text files to a target language while preserving
+  code integrity and formatting, with specific rules for different file
+  types.
+tags:
+  [
+    translation,
+    localization,
+    text processing,
+    programming languages,
+    markdown,
+    configuration files,
+    HTML,
+    XML,
+  ]
 ---
 
 # Translate

@@ -3,6 +3,27 @@
 <details>
 <summary>
 
+## **[0.3.1] - 2026/03/26** => _02:08_
+
+</summary>
+
+- Add `'**/node_modules/**/*'` à `DEFAULT_EXCLUDE` dans `constants.ts`
+- Add prop `dir` au plugin `typescript` pour configurer le répertoire de
+  sortie des déclarations
+- Add appel à `replaceTscAliasPaths` après la génération DTS (handler
+  `closeBundle` devient async)
+- Update `tsc-alias` déplacé de `devDependencies` vers `peerDependencies`
+- Refactor style dans `src/config.ts` : guillemets simples uniformes et
+  flèches sans parenthèses
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.3.0] - 2026/03/26** => _00:20_
 
 </summary>

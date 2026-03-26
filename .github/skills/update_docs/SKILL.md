@@ -1,4 +1,9 @@
 ---
+title: Update Documentation for New Version
+description:
+  A guide to updating CHANGELOG.md and README.md after a version bump by
+  analyzing git commits and comparing versions.
+tags: [documentation, changelog, versioning, git]
 ---
 
 # Update Docs
