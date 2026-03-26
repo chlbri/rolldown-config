@@ -3,6 +3,20 @@
 <details>
 <summary>
 
+## **[0.4.1] - 2026/03/26** => _02:40_
+
+</summary>
+
+- Refactor `rolldown` déplacé de `dependencies` vers `peerDependencies` (et `devDependencies`)
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.4.0] - 2026/03/26** => _02:24_
 
 </summary>
