@@ -3,6 +3,23 @@
 <details>
 <summary>
 
+## **[0.4.0] - 2026/03/26** => _02:24_
+
+</summary>
+
+- Update `rolldown` promu de `devDependencies`/`peerDependencies` vers
+  `dependencies` (dépendance runtime directe — plus besoin de l'installer
+  séparément)
+- Remove `rolldown` de `peerDependencies`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.3.1] - 2026/03/26** => _02:08_
 
 </summary>

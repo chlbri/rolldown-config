@@ -34,37 +34,7 @@ MIT
 
 ## CHANGELOG
 
-<details>
-
-<summary>
-...
-</summary>
-
-### Version [0.1.2] --> _25/03/2026 10:24_
-
-- Add `platform: 'node'` to rolldown build config
-- Update `vitest` from `^3.2.4` to `^4.1.1`
-- Update `@vitest/coverage-v8` and `@vitest/ui` to `4.1.1`
-
-### Version [0.1.1] --> _25/03/2026 10:06_
-
-- Exigence Node.js portée de `>=22` à `>=24`
-- Ajoute `require.js` : polyfill CJS `require()` injecté automatiquement
-- Corrige l'URL du dépôt dans `package.json`
-
-### Version [0.1.0] --> _24/03/2026 20:25_
-
-- Migre de `@bemedev/rollup-config` (rollup) vers
-  `@bemedev/rolldown-config` (rolldown)
-- Ajoute la configuration de base pour Rolldown via `defineConfig`
-- Expose les variantes `defineConfig.default` et `defineConfig.bemedev`
-- Intègre les plugins : `alias`, `typescript`, `tsPaths`, `circulars`,
-  `externals`, `clean`
-- Supporte les paramètres : `circularDeps`, `excludesTS`, `ignoresJS`,
-  `externals`, `dir`, `sourcemap`, `declarationMap`, `plugins`
-- Requiert Node.js >= 22
-
-</details>
+Chnages since last version are documented in [CHANGELOG.md](CHANGELOG.md).
 
 <br/>
 
