@@ -3,6 +3,20 @@
 <details>
 <summary>
 
+## **[0.2.3] - 2026/03/26** => _00:08_
+
+</summary>
+
+- Update `rolldown` de `1.0.0-rc.11` à `1.0.0-rc.12` dans `peerDependencies`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.2.2] - 2026/03/25** => _16:00_
 
 </summary>
