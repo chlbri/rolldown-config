@@ -3,11 +3,30 @@
 <details>
 <summary>
 
+## **[0.3.0] - 2026/03/26** => _00:20_
+
+</summary>
+
+- Fix ordre des plugins : `typescript` déplacé après `externals` dans
+  l'ordre par défaut (`defaultOrdered`)
+- Refactor style : normalisation des guillemets doubles et des paramètres
+  de fonctions fléchées dans `src/config.ts`
+- Update `rolldown` à `1.0.0-rc.12` dans les dépendances de développement
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.2.3] - 2026/03/26** => _00:08_
 
 </summary>
 
-- Update `rolldown` de `1.0.0-rc.11` à `1.0.0-rc.12` dans `peerDependencies`
+- Update `rolldown` de `1.0.0-rc.11` à `1.0.0-rc.12` dans
+  `peerDependencies`
 - <u>Test coverage **_100%_**</u>
 
 </details>
