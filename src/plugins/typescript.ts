@@ -1,20 +1,22 @@
-import type { RolldownPluginOption } from 'rolldown';
-import ts from 'typescript';
-import { DEFAULT_DIR } from '../constants';
 import { toArray } from '#utils';
-import { readTsConfig } from './typescript.config';
 import { existsSync } from 'node:fs';
+import type { RolldownPluginOption } from 'rolldown';
+import { replaceTscAliasPaths } from 'tsc-alias';
+import ts from 'typescript';
+import { readTsConfig } from './typescript.config';
 
 type Props = {
   exclude?: string | string[];
   include?: Record<string, string>;
   declarationMap?: boolean;
+  dir?: string;
 };
 
 export const typescript = ({
   exclude,
   include,
   declarationMap,
+  dir: outDir,
 }: Props = {}): RolldownPluginOption => {
   let done = false;
 
@@ -29,7 +31,7 @@ export const typescript = ({
     },
     closeBundle: {
       order: 'pre',
-      handler() {
+      async handler() {
         if (done) return;
         const cwd = process.cwd();
 
@@ -49,8 +51,7 @@ export const typescript = ({
             exclude: [...toArray(exclude), '*.ts'],
             compilerOptions: {
               ...configFile.options,
-              rootDir: './src',
-              outDir: DEFAULT_DIR,
+              outDir,
               noEmit: false,
               emitDeclarationOnly: true,
               declaration: true,
@@ -79,6 +80,11 @@ export const typescript = ({
             ts.formatDiagnosticsWithColorAndContext(errors, host),
           );
         }
+
+        await replaceTscAliasPaths({
+          configFile: tsconfigPath,
+          outDir,
+        });
 
         done = true;
         console.log('DTS generation complete');

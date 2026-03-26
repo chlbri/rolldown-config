@@ -1,4 +1,5 @@
 export const DEFAULT_EXCLUDE = [
+  '**/node_modules/**/*',
   '**/__tests__/**/*',
   '**/*.test.ts',
   '**/*.test-d.ts',

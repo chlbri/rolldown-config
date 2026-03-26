@@ -1,17 +1,18 @@
-import { toArray } from "#utils";
-import { defineConfig as _defineConfig } from "rolldown";
+import { toArray } from '#utils';
+import { defineConfig as _defineConfig } from 'rolldown';
+import {} from 'rolldown/config';
 import {
   DEFAULT_CIRCULAR_DEPS,
   DEFAULT_DIR,
   DEFAULT_EXCLUDE,
-} from "./constants";
-import { buildInput } from "./input";
-import { buildOutput } from "./output";
-import { PLUGIN_BUILDERS } from "./plugins";
-import type { Config_F, Params } from "./types";
-import path from "node:path";
+} from './constants';
+import { buildInput } from './input';
+import { buildOutput } from './output';
+import { PLUGIN_BUILDERS } from './plugins';
+import type { Config_F, Params } from './types';
+import path from 'node:path';
 
-export const defineConfig: Config_F = (additionals) => {
+export const defineConfig: Config_F = additionals => {
   return defineConfig.default(additionals);
 };
 
@@ -30,9 +31,10 @@ const producePlugins = ({
     alias: () => PLUGIN_BUILDERS.alias(),
     typescript: () =>
       PLUGIN_BUILDERS.typescript({
-        exclude,
         include,
+        exclude,
         declarationMap,
+        dir,
       }),
     circulars: () =>
       PLUGIN_BUILDERS.circulars({
@@ -42,7 +44,7 @@ const producePlugins = ({
       PLUGIN_BUILDERS.externals({
         // exclude peerDependencies and dependencies
         optDeps: false,
-        builtinsPrefix: "strip",
+        builtinsPrefix: 'strip',
         include: excludesTS,
       }),
     tsPaths: () => PLUGIN_BUILDERS.tsPaths({ colors: true }),
@@ -65,11 +67,11 @@ const producePlugins = ({
 
   return plugins
     ? plugins
-        .map((p) => {
-          if (typeof p === "string") return unordered[p]();
+        .map(p => {
+          if (typeof p === 'string') return unordered[p]();
           return p;
         })
-        .filter((p) => !!p)
+        .filter(p => !!p)
     : defaultOrdered();
 };
 
@@ -95,14 +97,14 @@ defineConfig.default = ({
     output,
     transform: {
       inject: {
-        require: path.resolve("./require.js"),
+        require: path.resolve('./require.js'),
       },
     },
-    platform: "node",
+    platform: 'node',
   });
 };
 
-defineConfig.bemedev = (additionals) => {
+defineConfig.bemedev = additionals => {
   // #region constants
   const circularDeps = DEFAULT_CIRCULAR_DEPS.concat(
     toArray(additionals?.circularDeps),
@@ -111,7 +113,9 @@ defineConfig.bemedev = (additionals) => {
     DEFAULT_CIRCULAR_DEPS,
   );
 
-  const excludesTS = DEFAULT_EXCLUDE.concat(toArray(additionals?.excludesTS));
+  const excludesTS = DEFAULT_EXCLUDE.concat(
+    toArray(additionals?.excludesTS),
+  );
   const _sourcemap = additionals?.sourcemap;
   const sourcemap = _sourcemap === undefined || _sourcemap === true;
   // #endregion
