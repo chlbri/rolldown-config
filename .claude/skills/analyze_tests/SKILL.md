@@ -1,5 +1,3 @@
-
-
 # Analyze Tests
 
 Measure the inline length of `test()` candidates to decide whether each

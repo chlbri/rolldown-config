@@ -1,11 +1,11 @@
-import { defineConfig } from "./src/config";
+import { defineConfig } from './src/config';
 
 export default defineConfig.bemedev({
   circularDeps: [
-    "**/src/helpers.ts",
-    "**/src/plugins/index.ts",
-    "**/src/plugins/clean.ts",
-    "**/src/plugins/circulars.ts",
+    '**/src/helpers.ts',
+    '**/src/plugins/index.ts',
+    '**/src/plugins/clean.ts',
+    '**/src/plugins/circulars.ts',
   ],
-  externals: ["rolldown", "typescript", "glob"],
+  externals: ['rolldown', 'typescript', 'glob'],
 });

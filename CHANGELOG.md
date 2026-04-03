@@ -3,14 +3,37 @@
 <details>
 <summary>
 
+## **[0.5.0] - 03/04/2026** => _09:40_
+
+</summary>
+
+- Add `esmExternalRequirePlugin` (depuis `rolldown/plugins`) dans la chaîne de plugins par défaut
+- Remove injection `transform.inject.require` (suppression de la dépendance à `require.js`)
+- Remove import inutilisé `path` depuis `node:path` dans `src/config.ts`
+- Update `rolldown` de `1.0.0-rc.12` → `1.0.0-rc.13`
+- Update dépendances dev : `@types/node`, `oxfmt`, `oxlint`
+- Refactor uniformisation des guillemets simples dans tout le code source
+- Refactor déplacement des skills `.github/skills/` → `.claude/skills/`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.4.2] - 2026/03/26** => _03:13_
 
 </summary>
 
-- Add re-export de `RolldownOptions` depuis `src/types.ts` (fix portabilité des types pour les consommateurs)
+- Add re-export de `RolldownOptions` depuis `src/types.ts` (fix portabilité
+  des types pour les consommateurs)
 - Refactor `interface Config_F` → `type Config_F`
-- Refactor suppression de l'import inutilisé `import {} from 'rolldown/config'`
-- Refactor style : guillemets simples → doubles, paramètres fléchés entre parenthèses
+- Refactor suppression de l'import inutilisé
+  `import {} from 'rolldown/config'`
+- Refactor style : guillemets simples → doubles, paramètres fléchés entre
+  parenthèses
 - Add `rollup-plugin-typescript2` dans `devDependencies`
 - <u>Test coverage **_100%_**</u>
 
@@ -25,7 +48,8 @@
 
 </summary>
 
-- Refactor `rolldown` déplacé de `dependencies` vers `peerDependencies` (et `devDependencies`)
+- Refactor `rolldown` déplacé de `dependencies` vers `peerDependencies` (et
+  `devDependencies`)
 - <u>Test coverage **_100%_**</u>
 
 </details>
